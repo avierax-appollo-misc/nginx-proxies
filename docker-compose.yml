@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  front:
+    image: nginx
+    ports:
+      - "0.0.0.0:80:80"
+    expose:
+      - "80"
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./unconfigured.html:/usr/share/nginx/html/index.html
+    restart: always
